@@ -174,7 +174,7 @@ All that is needed are
 
 ### 3.2. Building and installing
 
-Now we can run the build process and build a distribution. Run this from the `eat` directory.
+Now we can run the build process and build a distribution. Run this from the `example1` directory.
 
 ```bash
 (packaging) $> python -m build
