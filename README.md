@@ -305,7 +305,7 @@ https://pypi.org/project/eat-example-marcverhagen/0.0.1/
 
 Here is a fragment of the page advertized immediately above.
 
-<img src="images/pypi.png" alt="test.pypi" width="500" align="left" />
+<img src="images/pypi.png" alt="test.pypi" width="500"  />
 
 You can have multiple versions up there which you can see via the "Release history" link.
 
@@ -318,7 +318,9 @@ Requirement already satisfied: eat-example-marcverhagen in /Applications/ADDED/v
 
 Since the package was already installed nothing happens.
 
+All the above steps can be schematized as follows.
 
+<img src="images/packaging.png" alt="packaging" width="900px"  />
 
 ## 4. Bells and whistles
 
@@ -457,7 +459,7 @@ To avoid this situation, first use Test PyPI to perform and check your upload fi
 
 On the test PyPI site you can now see the metadata.
 
-<img src="images/pypi-0.0.4.png" alt="pypi-0.0.4.pypi" width="600" align="left" />
+<img src="images/pypi-0.0.4.png" alt="pypi-0.0.4.pypi" width="600" />
 
 And anyone with access to pip can install your package.
 
