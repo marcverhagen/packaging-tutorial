@@ -115,7 +115,7 @@ Eat paella
 
 With this approach it is easy to give your code to others. You wrap up your package in a zip archive and put it some place where others can dowload it, and they unpack the archive somehwere and then either update the Python path or copy the package to `site-packages`.
 
-However, all the drawbacks mentioned above remain so we will now look at a more sophisticated way to build a package, one where you can save metadata with the package and where people can install your code using pip.
+We will now look at a more sophisticated way to build a package, one where you can save metadata with the package and where people can install your code using pip.
 
 
 
