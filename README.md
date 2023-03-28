@@ -1,10 +1,10 @@
-# Python Packaging Tutorial - Part 1
+# Python Packaging Tutorial
 
-Marc Verhagen, March 2023.
+Last updated, March 2023.
 
-This tutorial takes you through the steps of making code more widely available and focuses on the overal process of packaging and distributing Python code. We start with a very basic python package that has no dependencies on third party packages. And we then first look at how you yourself can use a particular piece of code anywhere on your machine and not just in the same directory as where your code was initially created. This simple process is at the core of more sophisticated approaches like pip install.
+This tutorial takes you through the steps of making your code more widely available and focuses on the overal process of packaging and distributing Python code. We start with a very basic python package that has no dependencies on third party packages. And we then first look at how you yourself can use a particular piece of code anywhere on your machine and not just in the same directory as where your code was initially created. This simple process is at the core of more sophisticated approaches like pip install.
 
-From there the tutorial takes you through several steps to make your code easier to use for others, culiminating in a user's ability to do a pip-install and get the code from PyPI, the Python Package Index. Part 2 of this tutorial will work with a more complex example and force us to deal with dependencies, it will also make better use of some of the bells and whistles that PyPI has to offer.
+From there the tutorial takes you through several steps to make your code easier to use for others, culminating in a user's ability to do a pip-install and get the code from PyPI, the Python Package Index. Part 2 of this tutorial, which will be released soonish, will work with a more complex example and force us to deal with dependencies, it will also make better use of some of the bells and whistles that PyPI has to offer.
 
 To follow along with the examples you need a recent Python version (probably version 3.8 or higher will do). The examples further assume that we work in a fresh Python environment, that is, nothing else is installed, and we assume that this environment is a virtual environment that lives in `/env/packaging`. In case you don't know what virtual environments are and what they are good for, there are many good places to start reading up on that, including [https://docs.python.org/3/tutorial/venv.html](https://docs.python.org/3/tutorial/venv.html). To set up for this tutorial you should do the following:
 
@@ -21,7 +21,7 @@ If you do not want to use `/env/packaging` you may save your environment anywher
 
 Your first step should be to make sure your code is a package. A Python package is a directory of Python modules that contains an additional `__init__.py` file. The collection of modules can be empty so the package can be just the `__init__.py` file, which is what we do here. See [https://realpython.com/python-modules-packages/](https://realpython.com/python-modules-packages/) for more on packages.
 
-> It is very possible to distribute a single module without creating a package, but when your code is sufficiently complex it is hard if not impossible to support smooth distribution without creating a package. 
+> It is possible to distribute a single module without creating a package, but when your code is sufficiently complex it is hard to support smooth distribution without creating a package. 
 
 We name the package *eat* and it is structured as follows.
 
@@ -115,16 +115,16 @@ Eat paella
 
 ### 2.3. Distributing the package
 
-It is now easy to give your code to others. You wrap up your package in a zip archive, add some notes  on what requirements your package has and put it some web-accessable place. Now anyone can dowload it, unpack the archive and then either update the Python path or copy the package to `site-packages`.
+It is now easy to give your code to others. You wrap up your package in an archive, add some notes  on what requirements your package has and put it at some web-accessable place. Now anyone can dowload it, unpack the archive and then either update the Python path or copy the package to `site-packages`.
 
 We will now look at a more sophisticated way to build a package, one where you can save metadata with the package and where people can install your code using pip.
 
 
 ## 3. Building a pip-installable package
 
-There are some drawbacks to the approaches above. In general, they have a somewhat haphazard feel to them. There is no accounting of anything and you will also have to manually keep track of where your packages are and what version you are using. And the standard pip package manager will not know that your package is in the `site-packages` folder . Being able to install a package with pip will structure your packaging life and make it easier for others to know what they have in a newly gotten package.
+There are drawbacks to the approach above. There is no accounting of anything and you will have to manually keep track of where your packages are and what version you are using. And the standard pip package manager will not know that your package is in the `site-packages` folder. Installing with pip takes care of the missing bookkeeping.
 
-Much of this section is based on existing tutorials, including the official [packaging tutorial](https://packaging.python.org/) from PyPA, the Python Packaging Authority ([https://www.pypa.io/en/latest/](https://www.pypa.io/en/latest/)), a working group that maintains many of the projects related to Python packaging. PyPI is the default Package Index for the Python community which lives at [https://pypi.org/](https://pypi.org/).
+Much of this section is based on existing tutorials, including the official [packaging tutorial](https://packaging.python.org/) from PyPA, the [Python Packaging Authority](https://www.pypa.io/en/latest/), a working group that maintains many of the projects related to Python packaging. PyPI at [https://pypi.org/](https://pypi.org/) is the default Package Index for the Python community.
 
 To be able to build and upload a pip-installable package you need to install the `build` and `twine` packages.
 
