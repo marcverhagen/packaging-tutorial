@@ -2,3 +2,7 @@
 *pyc
 __pycache__
 .DS_Store
+part1-basics/example/dist
+part1-basics/example/eat_example_marcverhagen.egg-info
+venv
+backup.sh
