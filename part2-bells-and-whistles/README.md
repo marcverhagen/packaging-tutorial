@@ -1,6 +1,6 @@
 # Python Packaging Tutorial - Bells and Whistles
 
-Last updated, May 2024.
+Last updated, March 2024.
 
 The previous tutorial in this repository (see its [README](../part1-basics/README.md) file) showed the simplest possible way to build, upload and install a package. This section lists a few improvements:
 
@@ -104,13 +104,13 @@ By default, when the build script looks for data in the Python package in `src` 
 include src/eat/VERSION
 ```
 
-At the same time we change `setup.py` so that it reads the version number from a file.
+At the same time we change `setup.py` so that it reads the version number from a file and defines a package that the eat package depends on (clearly it does not depend on pep8, the requirement is there just for explanatory purposes).
 
 ```python
 import setuptools
 setuptools.setup(
-  version=open('src/eat/VERSION').read().strip()
-)
+    version=open('src/eat/VERSION').read().strip(),
+    install_requires=['pep8'])
 ```
 
 With these changes we now have the following directory structure.
@@ -160,3 +160,4 @@ And anyone with access to pip can install your package.
 $ pip install -i https://test.pypi.org/simple/ eat-example-marcverhagen
 ```
 
+This would also install the dependencies.
