@@ -1,6 +1,6 @@
 # Python Packaging Tutorial - Bells and Whistles
 
-Last updated, May 2023.
+Last updated, May 2024.
 
 The previous tutorial in this repository (see its [README](../part1-basics/README.md) file) showed the simplest possible way to build, upload and install a package. This section lists a few improvements:
 
@@ -20,8 +20,8 @@ In less trivial cases it is common to have the Python packages not at the same l
 ├── pyproject.toml
 ├── setup.cfg
 └── src
-    └── eat
-        └── __init__.py
+    └── eat
+        └── __init__.py
 ```
 
 With this we should change the `setup.cfg` configuration file because with the old configuration the build process looks for packages directly inside of the top-level directory. And since `src` is not a package itself the process will fail to find any packages. Unfortunately, it will still happily build along and you won't know there is a failure till you realize that the archives you created do not have any package code in them. To avoid that we amend the configuration file a bit.
@@ -54,13 +54,13 @@ We will add a license and a readme file and some meta data for the package. Here
 ├── pyproject.toml
 ├── setup.cfg
 └── src
-    └── eat
-        └── __init__.py
+    └── eat
+        └── __init__.py
 ```
 
 The `LICENSE` file contains the MIT license and `README.md` has a few usage notes. Both will be bundled in the package, the 
 
-For metadata we now have:
+For the metadata in `setup.cfg` we now have:
 
 ```properties
 [metadata]
@@ -140,7 +140,9 @@ We can build a new version and upload it to the test PyPI.
 (packaging) $ twine upload --repository testpypi dist/*
 ```
 
-> Huh? The wheel misses a whole bunch of files that are in the tar including the VERSION file mentioned in the manifest and the manifest itself, but also the readme file and many others.
+<!--
+Huh? The wheel misses a whole bunch of files that are in the tar including the VERSION file mentioned in the manifest and the manifest itself, but also the readme file and many others.
+-->
 
 This version will have more meta data and the version file will be included and the version number in that file will overrule the number in `setup.cfg` in case it is still in there.
 

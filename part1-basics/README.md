@@ -1,6 +1,6 @@
 # Python Packaging Tutorial - Basics
 
-Last updated, May 2023.
+Last updated, May 2024.
 
 This tutorial takes you through the steps of making your code more widely available and focuses on the overal process of packaging and distributing Python code. We start with a very basic python package that has no dependencies on third party packages. And we then first look at how you yourself can use a particular piece of code anywhere on your machine and not just in the same directory as where your code was initially created. This simple process is at the core of more sophisticated approaches like pip install.
 
@@ -141,7 +141,7 @@ In order to create a distributable package we need to add some configuration fil
 ```
 .
 ├── eat
-│   └── __init__.py
+│   └── __init__.py
 ├── pyproject.toml
 └── setup.cfg
 ```
@@ -175,7 +175,7 @@ All that is needed are
 
 ### 3.2. Building and installing
 
-Now we can run the build process and build a distribution. Run this from the `` directory, which also includes the *eat* package.
+Now we can run the build process and build a distribution. Run this from the `part1-basics/code` directory, which also includes the *eat* package.
 
 ```bash
 (packaging) $ python -m build
@@ -186,20 +186,20 @@ This prints a lot of notes to the terminal and adds build files, distribution fi
 ```
 .
 ├── build
-│   ├── bdist.macosx-10.11-x86_64
-│   └── lib
-│       └── eat
-│           └── __init__.py
+│   ├── bdist.macosx-10.11-x86_64
+│   └── lib
+│       └── eat
+│           └── __init__.py
 ├── dist
-│   ├── eat-example-marcverhagen-0.0.1.tar.gz
-│   └── eat_example_marcverhagen-0.0.1-py3-none-any.whl
+│   ├── eat-example-marcverhagen-0.0.1.tar.gz
+│   └── eat_example_marcverhagen-0.0.1-py3-none-any.whl
 ├── eat
-│   └── __init__.py
+│   └── __init__.py
 ├── eat_example_marcverhagen.egg-info
-│   ├── PKG-INFO
-│   ├── SOURCES.txt
-│   ├── dependency_links.txt
-│   └── top_level.txt
+│   ├── PKG-INFO
+│   ├── SOURCES.txt
+│   ├── dependency_links.txt
+│   └── top_level.txt
 ├── pyproject.toml
 └── setup.cfg
 ```
