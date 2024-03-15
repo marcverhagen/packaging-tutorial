@@ -1,4 +1,4 @@
-# Python Packaging Tutorial
+# Python Packaging Tutorial - Basics
 
 Last updated, May 2023.
 
@@ -136,7 +136,7 @@ The latter is for uploading to PyPI.
 
 ### 3.1. Configuration
 
-In order to create a distributable package we need to add some configuration files to our Python package. This simple example is in this repository in the `example` directory.
+In order to create a distributable package we need to add some configuration files to our Python package. This simple example is in this repository in the `` directory.
 
 ```
 .
@@ -175,7 +175,7 @@ All that is needed are
 
 ### 3.2. Building and installing
 
-Now we can run the build process and build a distribution. Run this from the `example` directory, which also includes the *eat* package.
+Now we can run the build process and build a distribution. Run this from the `` directory, which also includes the *eat* package.
 
 ```bash
 (packaging) $ python -m build
